@@ -1,0 +1,12 @@
+!!!
+%html
+  = render 'layouts/v2/head'
+  %body{class: "#{params['controller']} #{params['action']} #{params['id']}"}
+
+    = render 'layouts/v2/header'
+
+    .main-content
+      = yield
+
+    = render 'layouts/v2/footer'
+    = render 'layouts/v2/footer_scripts'

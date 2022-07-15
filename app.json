@@ -1,0 +1,40 @@
+{
+  "name": "sample",
+  "scripts": {
+    "postdeploy": "bundle exec sidekiq -C config/sidekiq.yml"
+  },
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "MAILTRAP_API_TOKEN": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    }
+  },
+  "formation": {},
+  "addons": [
+    "mailtrap",
+    "heroku-postgresql",
+    "redistogo"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

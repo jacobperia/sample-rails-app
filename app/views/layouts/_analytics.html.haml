@@ -1,0 +1,78 @@
+- if params[:controller] == 'home' && params[:action] == 'index'
+  %script{:defer => "defer", :src => "https://apps.elfsight.com/p/platform.js"}
+  .elfsight-app-410590ab-8cf9-4e37-9b5e-5d524ef9a832
+
+
+// :javascript
+//   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+//
+//
+//   document.addEventListener('turbolinks:load', function() {
+//     ga('send', 'pageview');
+//   });
+
+// :javascript
+//   !function(f,b,e,v,n,t,s)
+//   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+//   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+//   n.queue=[];t=b.createElement(e);t.async=!0;
+//   t.src=v;s=b.getElementsByTagName(e)[0];
+//   s.parentNode.insertBefore(t,s)}(window,document,'script',
+//   'https://connect.facebook.net/en_US/fbevents.js');
+//
+//   fbq('init', '2435496470007109');
+//
+//   document.addEventListener('turbolinks:load', function() {
+//     fbq('track', 'PageView');
+//   });
+//
+// %noscript
+//   %img{:height => "1", :src => "https://www.facebook.com/tr?id=528298187548745&ev=PageView&noscript=1", :width => "1"}
+
+-# - unless params[:controller] == "purchases"
+-#   .elfsight-app-85d18207-0664-4e6d-a431-5b3fe1d1f8e5
+
+=intercom_script_tag
+
+-# Mailchimp popup form
+-# - if !user_signed_in? || (current_user && !current_user.allow_marketing)
+-#   %script{"data-dojo-config" => "usePlainJson: true, isDebug: false", :src => "//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js", :type => "text/javascript"}
+-#   :javascript
+-#     window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us7.list-manage.com","uuid":"8bd4974b208f07ab80c169ca5","lid":"7adfb0c0c1","uniqueMethods":true}) })
+
+// :javascript
+//   ! function() {
+//   var analytics = window.analytics = window.analytics || [];
+//   if (!analytics.initialize)
+//       if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.");
+//       else {
+//           analytics.invoked = !0;
+//           analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"];
+//           analytics.factory = function(t) {
+//               return function() {
+//                   var e = Array.prototype.slice.call(arguments);
+//                   e.unshift(t);
+//                   analytics.push(e);
+//                   return analytics
+//               }
+//           };
+//           for (var t = 0; t < analytics.methods.length; t++) {
+//               var e = analytics.methods[t];
+//               analytics[e] = analytics.factory(e)
+//           }
+//           analytics.load = function(t) {
+//               var e = document.createElement("script");
+//               e.type = "text / javascript";
+//               e.async = !0;
+//               e.src = ("https: " === document.location.protocol ? "https : //":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+//                   analytics.load("0o5nn5lYKd3dWMU1xmRYTlyM96Nvn4Om"); analytics.page();
+//               }
+//           }();
+
+
+-# - if params[:controller] != 'purchases'
+-#   -# Cookie Info
+-#   .elfsight-app-81fa093d-ea97-49ca-a926-072ef3438a80

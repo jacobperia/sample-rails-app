@@ -1,0 +1,8 @@
+!!!
+%html
+  = render 'layouts/v2/head'
+  %body{class: "#{params['controller']} #{params['action']} #{params['id']}"}
+    .main-content
+      = yield
+
+    = render 'layouts/v2/footer_scripts'

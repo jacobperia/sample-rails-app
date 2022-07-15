@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    :css
+      /* Email styles need to be inline */
+    = stylesheet_link_tag 'mailer'
+  %body
+    %table.email-wrapper{cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%"}
+      %tr
+        %td{align: "center"}
+          %table.email-content{cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%"}
+            = render 'shared/mailer/header'
+
+            / Email Body
+            %tr
+              %td.email-body{cellpadding: "0", cellspacing: "0", width: "570"}
+                %table.email-body_inner{align: "center", cellpadding: "0", cellspacing: "0", role: "presentation", width: "570"}
+                  / Body content
+                  %tr
+                    %td.content-cell
+                      .f-fallback
+                        = yield
+
+            %tr
+              = render 'shared/mailer/footer'
